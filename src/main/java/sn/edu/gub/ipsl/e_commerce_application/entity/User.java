@@ -1,16 +1,16 @@
 package sn.edu.gub.ipsl.e_commerce_application.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
+@Entity
 public class User {
 
     @Id
@@ -26,5 +26,6 @@ public class User {
     @Column(nullable = false,length = 16)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     private Role role;
 }

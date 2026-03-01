@@ -1,9 +1,6 @@
 package sn.edu.gub.ipsl.e_commerce_application.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @AllArgsConstructor
@@ -11,6 +8,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
+@Entity
 public class Produit {
 
     @Id

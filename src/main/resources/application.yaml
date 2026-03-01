@@ -2,3 +2,12 @@ spring:
   application:
     name: e-commerce-application
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/e_commerce
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
