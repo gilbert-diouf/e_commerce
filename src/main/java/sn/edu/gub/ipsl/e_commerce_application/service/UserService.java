@@ -1,6 +1,11 @@
 package sn.edu.gub.ipsl.e_commerce_application.service;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import sn.edu.gub.ipsl.e_commerce_application.entity.Role;
 import sn.edu.gub.ipsl.e_commerce_application.entity.User;
 import sn.edu.gub.ipsl.e_commerce_application.repository.UserRepository;
 
@@ -8,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private UserRepository userRepository;
 
@@ -44,5 +49,17 @@ public class UserService {
 
     public User update(User user){
         return userRepository.save(user);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        if (username.equals("admin")){
+            return (UserDetails) User.builder()
+                    .nom("admin")
+                    .password(new BCryptPasswordEncoder().encode("passer123"))
+                    .role(Role.Admin)
+                    .build();
+        }
+        throw new UsernameNotFoundException("Utilisateur non trouve");
     }
 }

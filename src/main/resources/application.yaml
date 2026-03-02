@@ -11,3 +11,8 @@ spring:
     hibernate:
       ddl-auto: create-drop
 
+app:
+  secret-key: hjkklljgtfftrtr7vgftgjjkkjj
+  expiration-time: 24h
+
+

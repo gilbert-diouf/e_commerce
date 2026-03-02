@@ -11,10 +11,11 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "Users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false,length = 25)
