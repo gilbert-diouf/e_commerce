@@ -13,6 +13,6 @@ spring:
 
 app:
   secret-key: hjkklljgtfftrtr7vgftgjjkkjj
-  expiration-time: 24h
+  expiration-time: 86400000
 
 
