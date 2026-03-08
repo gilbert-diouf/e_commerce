@@ -30,4 +30,8 @@ public class Produit {
     @ManyToOne
     @JoinColumn(name = "commande")
     private Commande commande;
+
+    @ManyToOne
+    @JoinColumn(name = "panier")
+    private Panier panier;
 }
