@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Carte {
+public class Panier {
 
     @Id
     private Long id;

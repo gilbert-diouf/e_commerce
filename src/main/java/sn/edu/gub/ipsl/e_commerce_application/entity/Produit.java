@@ -26,4 +26,8 @@ public class Produit {
 
     @Column(length = 30)
     private Integer stock;
+
+    @ManyToOne
+    @JoinColumn(name = "commande")
+    private Commande commande;
 }
