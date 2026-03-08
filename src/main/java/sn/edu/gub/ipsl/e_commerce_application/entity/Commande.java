@@ -1,13 +1,18 @@
 package sn.edu.gub.ipsl.e_commerce_application.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
-@Table(name = "orders")
 public class Commande {
 
     @Id
@@ -23,11 +28,8 @@ public class Commande {
 
     private BigDecimal montantTotal;
 
-    public enum STATUS{
-        EN_COURS,
-        VALIDEE,
-        LIVREE
-    }
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     private LocalDateTime dateCreation;
 
